@@ -64,8 +64,8 @@ $route = Route::current()->getName();
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="{{ url('/profile/edit') }}">
-                                <span class="u-sidebar-nav-menu__item-title">Edit Profile</span>
+                            <a class="u-sidebar-nav-menu__link" href="{{ url('/profile/password') }}">
+                                <span class="u-sidebar-nav-menu__item-title">Change Password</span>
                             </a>
                         </li>
                     </ul>
