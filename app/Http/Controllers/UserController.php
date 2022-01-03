@@ -25,6 +25,7 @@ class UserController extends Controller
     {
         User::insert([
            'name' => $request->name,
+           'role' => $request->role,
            'email' => $request->email,
            'password' => Hash::make($request->password),
            'created_at' => Carbon::now(),
@@ -45,12 +46,9 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-        ]);
         User::find($id)->update([
             'name' => $request->name,
+            'role' => $request->role,
             'email' => $request->email,
         ]);
         return Redirect::route('users.index')->with('status', 'success updated');

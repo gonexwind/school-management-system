@@ -82,8 +82,8 @@
                                     <thead class="bg-gradient">
                                     <tr>
                                         <th scope="col" class="text-white text-center">No.</th>
-                                        <th scope="col" class="text-white">Role</th>
                                         <th scope="col" class="text-white text-center">Name</th>
+                                        <th scope="col" class="text-white text-center">Role</th>
                                         <th scope="col" class="text-white text-center">Email</th>
                                         <th scope="col" class="text-white text-center">Action</th>
                                         <th scope="col" class="text-white text-center"></th>
@@ -93,8 +93,8 @@
                                     @foreach($users as $key => $user)
                                         <tr>
                                             <td class="text-center">{{ $key+1 }}</td>
-                                            <td>{{ $user->name }}</td>
                                             <td class="text-center">{{ $user->name }}</td>
+                                            <td class="text-center">{{ $user->role }}</td>
                                             <td class="text-center">{{ $user->email }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('users.edit', [$user->id]) }}"

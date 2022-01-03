@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <form action="{{ route('users.update', [$user->id]) }}" method="post" class="es-form es-add-form">
                             @csrf
-                            @method('put')
+                            @method('patch')
                             <div class="row">
                                 <div class="col-lg-8 offset-lg-2 col-md-12 mb-4">
                                     <label for="title">Name</label>
@@ -23,11 +23,11 @@
                                 </div>
                                 <div class="col-lg-8 offset-lg-2 col-md-12 mb-4">
                                     <label for="role">Role</label>
-                                    <select id="role" class="es-add-select">
-                                        <option data-display="Role">role</option>
-                                        <option value="0">Admin</option>
-                                        <option value="1">Employee</option>
-                                        <option value="2">Student</option>
+                                    <select name="role" id="role" class="es-add-select">
+                                        <option data-display="{{ $user->role }}">role</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="employee">Employee</option>
+                                        <option value="student">Student</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 offset-lg-4 col-md-12 text-center">

@@ -26,11 +26,11 @@
                                 </div>
                                 <div class="col-lg-8 offset-lg-2 col-md-12 mb-4">
                                     <label for="role">Role</label>
-                                    <select id="role" class="es-add-select">
+                                    <select name="role" id="role" class="es-add-select">
                                         <option data-display="Role">role</option>
-                                        <option value="0">Admin</option>
-                                        <option value="1">Employee</option>
-                                        <option value="2">Student</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="employee">Employee</option>
+                                        <option value="student">Student</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 offset-lg-4 col-md-12 text-center">
