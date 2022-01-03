@@ -30,7 +30,11 @@ class UserController extends Controller
            'password' => Hash::make($request->password),
            'created_at' => Carbon::now(),
         ]);
-        return redirect()->route('users.index')->with('status', 'success added user');
+        $notification = array(
+            'message' => 'success added user',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('users.index')->with($notification);
     }
 
     public function show($id)
@@ -56,12 +60,20 @@ class UserController extends Controller
         $user->role = $request->role;
         $user->email = $request->email;
         $user->save();
-        return Redirect::route('users.index')->with('status', 'success updated');
+        $notification = array(
+            'message' => 'success updated user',
+            'alert-type' => 'success',
+        );
+        return Redirect::route('users.index')->with($notification);
     }
 
     public function destroy($id)
     {
         User::find($id)->delete();
-        return Redirect::route('users.index')->with('status', 'success deleted user');
+        $notification = array(
+            'message' => 'success deleted user',
+            'alert-type' => 'success',
+        );
+        return Redirect::route('users.index')->with($notification);
     }
 }

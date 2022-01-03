@@ -3,11 +3,6 @@
 @section('content')
     <div class="u-content">
         <div class="u-body">
-
-            @if(session('status'))
-                <h3>{{ session('status') }}</h3>
-        @endif
-
         <!-- breadcumb-area -->
             <section class="breadcumb-area card bg-gradient mb-5">
                 <div class="bread-cumb-content card-body d-flex align-items-center">
