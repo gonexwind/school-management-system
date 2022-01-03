@@ -54,12 +54,12 @@
                     <ul id="manage-profile" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level"
                         style="display: none;">
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ url('/profile') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Your Profile</span>
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ url('/profile/edit') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Edit Profile</span>
                             </a>
                         </li>

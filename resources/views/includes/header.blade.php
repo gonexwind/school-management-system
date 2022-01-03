@@ -142,7 +142,7 @@
             <a class="link-muted d-flex align-items-center us-u-avatar-wrap" href="#!" role="button"
                id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 <img class="u-avatar--xs img-fluid rounded-circle mr-2 bg-gradient"
-                     src="{{ asset('assets/img/avatars/img1.png') }}" alt="User Profile">
+                     src="{{ asset(Auth::user()->profile_photo_url) }}" alt="User Profile">
                 <span class="d-none d-sm-inline-block text-danger">
                         <small class="fas fa-ellipsis-v"></small>
                     </span>
