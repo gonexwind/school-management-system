@@ -7,7 +7,7 @@
             <section class="breadcumb-area card bg-gradient mb-5">
                 <div class="bread-cumb-content card-body d-flex align-items-center">
                     <div class="breadcumb-heading">
-                        <h2 class="text-white">All Students</h2>
+                        <h2 class="text-white">All Users</h2>
                     </div>
                     <div class="breadcumb-image ml-auto">
                         <img src="assets/img/breadcumb-students.png" alt="">
@@ -81,7 +81,6 @@
                                         <th scope="col" class="text-white text-center">Role</th>
                                         <th scope="col" class="text-white text-center">Email</th>
                                         <th scope="col" class="text-white text-center">Action</th>
-                                        <th scope="col" class="text-white text-center"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -92,16 +91,14 @@
                                             <td class="text-center">{{ $user->role }}</td>
                                             <td class="text-center">{{ $user->email }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('users.edit', [$user->id]) }}"
-                                                   class="btn btn-outline-danger es-am-btn">
-                                                    Edit
-                                                </a>
-                                            </td>
-                                            <td class="text-center">
                                                 <form action="{{ route('users.destroy', [$user->id]) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
+                                                    <a href="{{ route('users.edit', [$user->id]) }}"
+                                                       class="btn btn-outline-danger es-am-btn">
+                                                        Edit
+                                                    </a>
                                                     <button type="submit"
                                                             class="btn btn-outline-danger es-am-btn">
                                                         Delete
