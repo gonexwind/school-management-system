@@ -35,7 +35,7 @@ Route::resource('users', UserController::class);
 Route::prefix('/profile')->group(function () {
     Route::get('/', [ProfileController::class, 'index']);
     Route::get('/edit', [ProfileController::class, 'edit']);
-    Route::put('/update/{id}', [ProfileController::class, 'update']);
+    Route::put('/update', [ProfileController::class, 'update']);
     Route::get('/password', [ProfileController::class, 'password']);
     Route::put('/password', [ProfileController::class, 'updatePassword']);
 });

@@ -9,7 +9,7 @@
                         <h2 class="text-white mb-0">Edit {{ Auth::user()->name }}'s Profile</h2>
                     </header>
                     <div class="card-body">
-                        <form action="{{ url('/profile/update/'. Auth::user()->id )}}" method="post" class="es-form es-add-form">
+                        <form action="{{ url('/profile/update') }}" method="post" class="es-form es-add-form">
                             @csrf
                             @method('put')
                             <div class="row">
@@ -34,7 +34,9 @@
                                     <input name="address" value="{{ Auth::user()->address }}">
                                 </div>
                                 <div class="col-lg-4 offset-lg-4 col-md-12 text-center">
-                                    <button type="submit" class="btn btn-danger btn-block bg-gradient border-0 text-white">Save</button>
+                                    <button type="submit"
+                                            class="btn btn-danger btn-block bg-gradient border-0 text-white">Save
+                                    </button>
                                 </div>
                             </div>
 
