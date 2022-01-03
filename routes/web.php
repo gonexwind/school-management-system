@@ -25,3 +25,6 @@ Route::get('/logout', function () {
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/');
 });
+
+// User
+Route::resource('users', \App\Http\Controllers\UserController::class);

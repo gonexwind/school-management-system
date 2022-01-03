@@ -29,12 +29,12 @@
                     <ul id="manage-user" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level"
                         style="display: none;">
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('users.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">View User</span>
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('users.create') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Add User</span>
                             </a>
                         </li>
