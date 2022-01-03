@@ -1,3 +1,8 @@
+@php
+$prefix = Request::route()->getPrefix();
+$route = Route::current()->getName();
+@endphp
+
 <aside id="sidebar" class="u-sidebar">
     <div class="u-sidebar-inner bg-gradient bdrs-30">
         <header class="u-sidebar-header">
@@ -10,7 +15,7 @@
             <ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
                 <!-- Dashboard -->
                 <li class="u-sidebar-nav-menu__item">
-                    <a class="u-sidebar-nav-menu__link active" href="{{ url('/dashboard') }}">
+                    <a class="u-sidebar-nav-menu__link {{ ($route == 'dashboard') ? 'active' : '' }}" href="{{ url('/dashboard') }}">
                         <i class="fas fa-tachometer-alt u-sidebar-nav-menu__item-icon"></i>
                         <span class="u-sidebar-nav-menu__item-title">Dashboard</span>
                     </a>
@@ -19,7 +24,7 @@
 
                 <!-- Manage User -->
                 <li class="u-sidebar-nav-menu__item">
-                    <a class="u-sidebar-nav-menu__link" href="" data-target="#manage-user">
+                    <a class="u-sidebar-nav-menu__link {{ str_contains($route, 'users') ? 'active' : '' }}" href="" data-target="#manage-user">
                         <i class="fa fa-users u-sidebar-nav-menu__item-icon"></i>
                         <span class="u-sidebar-nav-menu__item-title">Users</span>
                         <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
@@ -44,7 +49,7 @@
 
                 <!-- Manage Profile -->
                 <li class="u-sidebar-nav-menu__item">
-                    <a class="u-sidebar-nav-menu__link" href="" data-target="#manage-profile">
+                    <a class="u-sidebar-nav-menu__link {{ ($prefix == '/profile') ? 'active' : '' }}" href="" data-target="#manage-profile">
                         <i class="fa fa-user u-sidebar-nav-menu__item-icon"></i>
                         <span class="u-sidebar-nav-menu__item-title">Profile</span>
                         <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
