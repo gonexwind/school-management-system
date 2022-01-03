@@ -89,12 +89,10 @@
                                         <th scope="col" class="text-white text-center"></th>
                                     </tr>
                                     </thead>
-
                                     <tbody>
-                                    @php($i = 1)
-                                    @foreach($users as $user)
+                                    @foreach($users as $key => $user)
                                         <tr>
-                                            <td class="text-center">{{ $i++ }}</td>
+                                            <td class="text-center">{{ $key+1 }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td class="text-center">{{ $user->name }}</td>
                                             <td class="text-center">{{ $user->email }}</td>

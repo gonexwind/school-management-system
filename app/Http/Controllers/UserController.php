@@ -39,12 +39,21 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('pages.users.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        User::find($id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        return Redirect::route('users.index')->with('status', 'success updated');
     }
 
     public function destroy($id)
