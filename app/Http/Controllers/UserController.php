@@ -6,6 +6,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -48,6 +49,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return Redirect::route('users.index')->with('status', 'success deleted user');
     }
 }

@@ -4,8 +4,8 @@
     <div class="u-content">
         <div class="u-body">
 
-        @if(session('status'))
-            <h3>(session('status')</h3>
+            @if(session('status'))
+                <h3>{{ session('status') }}</h3>
         @endif
 
         <!-- breadcumb-area -->
@@ -86,6 +86,7 @@
                                         <th scope="col" class="text-white text-center">Name</th>
                                         <th scope="col" class="text-white text-center">Email</th>
                                         <th scope="col" class="text-white text-center">Action</th>
+                                        <th scope="col" class="text-white text-center"></th>
                                     </tr>
                                     </thead>
 
@@ -98,10 +99,21 @@
                                             <td class="text-center">{{ $user->name }}</td>
                                             <td class="text-center">{{ $user->email }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('users.edit', ['user' => $user->id]) }}"
+                                                <a href="{{ route('users.edit', [$user->id]) }}"
                                                    class="btn btn-outline-danger es-am-btn">
                                                     Edit
                                                 </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <form action="{{ route('users.destroy', [$user->id]) }}"
+                                                      method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                            class="btn btn-outline-danger es-am-btn">
+                                                        Delete
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
