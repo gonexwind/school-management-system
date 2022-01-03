@@ -3,7 +3,12 @@
 @section('content')
     <div class="u-content">
         <div class="u-body">
-            <!-- breadcumb-area -->
+
+        @if(session('status'))
+            <h3>(session('status')</h3>
+        @endif
+
+        <!-- breadcumb-area -->
             <section class="breadcumb-area card bg-gradient mb-5">
                 <div class="bread-cumb-content card-body d-flex align-items-center">
                     <div class="breadcumb-heading">
@@ -19,7 +24,8 @@
             <section class="es-form-area">
                 <div class="card">
                     <header class="card-header bg-gradient border-0 pt-5 pb-5 d-flex align-items-center">
-                        <a href="" class="btn btn-sm btn-pill btn-outline-light ml-auto">+ Add New</a>
+                        <a href="{{ route('users.create') }}" class="btn btn-sm btn-pill btn-outline-light ml-auto">+
+                            Add New</a>
                     </header>
                     <div class="card-body">
                         <form action="#" class="es-form">

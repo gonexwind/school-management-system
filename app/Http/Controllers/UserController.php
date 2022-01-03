@@ -28,7 +28,7 @@ class UserController extends Controller
            'password' => Hash::make($request->password),
            'created_at' => Carbon::now(),
         ]);
-        return $this->index()->with('status', 'success added user');
+        return redirect()->route('users.index')->with('status', 'success added user');
     }
 
     public function show($id)
