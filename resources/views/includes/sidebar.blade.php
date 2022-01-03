@@ -10,7 +10,7 @@
             <ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
                 <!-- Dashboard -->
                 <li class="u-sidebar-nav-menu__item">
-                    <a class="u-sidebar-nav-menu__link active" href="index.html">
+                    <a class="u-sidebar-nav-menu__link active" href="{{ url('/dashboard') }}">
                         <i class="fas fa-tachometer-alt u-sidebar-nav-menu__item-icon"></i>
                         <span class="u-sidebar-nav-menu__item-title">Dashboard</span>
                     </a>
