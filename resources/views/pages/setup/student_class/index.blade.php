@@ -43,6 +43,7 @@
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
+
                                                     <a href="{{ route('student-class.edit', [$data->id]) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit

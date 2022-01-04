@@ -30,14 +30,22 @@ class StudentClassController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit($id)
     {
-
+        $class = StudentClass::find($id);
+        return view('pages.setup.student_class.edit', compact('class'));
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
-
+        $request->validate(['name' => 'required|unique:student_classes']);
+        $class = StudentClass::find($id);
+        $class->name = $request->name;
+        $class->save();
+        return Redirect::route('student-class.index')->with([
+            'message' => 'success updated data',
+            'alert-type' => 'success',
+        ]);
     }
 
     public function destroy()
