@@ -3,7 +3,7 @@
 @section('content')
     <div class="u-content">
         <div class="u-body">
-        <!-- breadcumb-area -->
+            <!-- breadcumb-area -->
             <section class="breadcumb-area card bg-gradient mb-5">
                 <div class="bread-cumb-content card-body d-flex align-items-center">
                     <div class="breadcumb-heading">
@@ -85,21 +85,25 @@
                                     </thead>
                                     <tbody>
                                     @foreach($users as $key => $user)
+                                        @if($user->id == Auth::id())
+                                            @continue
+                                        @endif
                                         <tr>
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $user->name }}</td>
                                             <td class="text-center">{{ $user->role }}</td>
                                             <td class="text-center">{{ $user->email }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('users.destroy', [$user->id]) }}"
+                                                <form action="{{ route('users.destroy', $user->id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('users.edit', [$user->id]) }}"
+                                                    <a href="{{ route('users.edit', $user->id) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
                                                     <button type="submit" id="delete"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');"
                                                             class="btn btn-outline-danger es-am-btn">
                                                         Delete
                                                     </button>

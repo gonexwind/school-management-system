@@ -39,16 +39,17 @@
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $data->name }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('student-group.destroy', [$data->id]) }}"
+                                                <form action="{{ route('student-group.destroy', $data->id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="{{ route('student-group.edit', [$data->id]) }}"
+                                                    <a href="{{ route('student-group.edit', $data->id) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
                                                     <button type="submit"
+                                                            onclick="return confirm('Are you sure you want to delete this item?');"
                                                             class="btn btn-outline-danger es-am-btn">
                                                         Delete
                                                     </button>

@@ -6,10 +6,10 @@
             <section class="es-form-area">
                 <div class="card">
                     <header class="card-header bg-gradient border-0 pt-5 pb-5 d-flex align-items-center">
-                        <h2 class="text-white mb-0">Edit Student Shift</h2>
+                        <h2 class="text-white mb-0">Edit Fee Category</h2>
                     </header>
                     <div class="card-body">
-                        <form action="{{ route('student-shift.update', $data->id) }}" method="post" class="es-form es-add-form">
+                        <form action="{{ route('fee-category.update', $data->id) }}" method="post" class="es-form es-add-form">
                             @csrf
                             @method('put')
                             <div class="row">
@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </section>
+
         </div>
     </div>
 @endsection

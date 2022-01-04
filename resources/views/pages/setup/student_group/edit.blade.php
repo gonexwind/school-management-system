@@ -9,7 +9,7 @@
                         <h2 class="text-white mb-0">Edit Student Group</h2>
                     </header>
                     <div class="card-body">
-                        <form action="{{ route('student-group.update', [$data->id]) }}" method="post" class="es-form es-add-form">
+                        <form action="{{ route('student-group.update', $data->id) }}" method="post" class="es-form es-add-form">
                             @csrf
                             @method('put')
                             <div class="row">

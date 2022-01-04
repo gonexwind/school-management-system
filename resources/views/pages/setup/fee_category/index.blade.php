@@ -7,7 +7,7 @@
             <section class="breadcumb-area card bg-gradient mb-5">
                 <div class="bread-cumb-content card-body d-flex align-items-center">
                     <div class="breadcumb-heading">
-                        <h2 class="text-white">Student Shift List</h2>
+                        <h2 class="text-white">Fee Category List</h2>
                     </div>
                     <div class="breadcumb-image ml-auto">
                         <img src="{{asset('assets/img/breadcumb-students.png')}}" alt="">
@@ -19,7 +19,7 @@
             <section class="es-form-area">
                 <div class="card">
                     <header class="card-header bg-gradient border-0 pt-5 pb-5 d-flex align-items-center">
-                        <a href="{{ route('student-shift.create') }}" class="btn btn-sm btn-pill btn-outline-light ml-auto">+
+                        <a href="{{ route('fee-category.create') }}" class="btn btn-sm btn-pill btn-outline-light ml-auto">+
                             Add New</a>
                     </header>
                     <div class="card-body">
@@ -39,12 +39,12 @@
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $data->name }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('student-shift.destroy', $data->id) }}"
+                                                <form action="{{ route('fee-category.destroy', $data->id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="{{ route('student-shift.edit', $data->id) }}"
+                                                    <a href="{{ route('fee-category.edit', $data->id) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
