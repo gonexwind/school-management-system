@@ -74,7 +74,7 @@ $route = Route::current()->getName();
 
                 <!-- Setup Management -->
                 <li class="u-sidebar-nav-menu__item">
-                    <a class="u-sidebar-nav-menu__link" href="" data-target="#setup-management">
+                    <a class="u-sidebar-nav-menu__link {{ ($prefix == '/setup') ? 'active' : '' }}" href="" data-target="#setup-management">
                         <i class="fa fa-tasks u-sidebar-nav-menu__item-icon"></i>
                         <span class="u-sidebar-nav-menu__item-title">Setup</span>
                         <i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
@@ -84,7 +84,7 @@ $route = Route::current()->getName();
                     <ul id="setup-management" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level"
                         style="display: none;">
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('student.class.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Student Class</span>
                             </a>
                         </li>

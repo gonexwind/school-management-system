@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Setup\StudentClassController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,5 +39,14 @@ Route::prefix('/profile')->group(function () {
     Route::put('/update', [ProfileController::class, 'update']);
     Route::get('/password', [ProfileController::class, 'password']);
     Route::put('/password', [ProfileController::class, 'updatePassword']);
+});
+
+// Setup Management
+Route::prefix('/setup')->group(function () {
+    Route::prefix('/student/class')->name('student.class.')->group(function () {
+        Route::get('/', [StudentClassController::class, 'index'])->name('index');
+        Route::get('/edit', [StudentClassController::class, 'index'])->name('edit');
+        Route::get('/delete', [StudentClassController::class, 'index'])->name('destroy');
+    });
 });
 
