@@ -34,7 +34,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($students as $key => $data)
+                                    @foreach($fees as $key => $data)
                                         <tr>
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $data->name }}</td>

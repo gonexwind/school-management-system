@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Setup\FeeCategoryController;
 use App\Http\Controllers\Setup\StudentClassController;
 use App\Http\Controllers\Setup\StudentGroupController;
 use App\Http\Controllers\Setup\StudentShiftController;
@@ -46,13 +47,10 @@ Route::prefix('/profile')->group(function () {
 
 // Setup Management
 Route::prefix('/setup')->group(function () {
-    Route::resource('student-class', StudentClassController::class)
-        ->except('show');
-    Route::resource('student-year', StudentYearController::class)
-        ->except('show');
-    Route::resource('student-group', StudentGroupController::class)
-        ->except('show');
-    Route::resource('student-shift', StudentShiftController::class)
-        ->except('show');
+    Route::resource('student-class', StudentClassController::class)->except('show');
+    Route::resource('student-year', StudentYearController::class)->except('show');
+    Route::resource('student-group', StudentGroupController::class)->except('show');
+    Route::resource('student-shift', StudentShiftController::class)->except('show');
+    Route::resource('fee-category', FeeCategoryController::class)->except('show');
 });
 
