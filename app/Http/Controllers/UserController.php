@@ -37,11 +37,6 @@ class UserController extends Controller
         return redirect()->route('users.index')->with($notification);
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $user = User::find($id);

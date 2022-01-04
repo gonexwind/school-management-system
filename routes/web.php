@@ -30,7 +30,7 @@ Route::get('/logout', function () {
 });
 
 // User
-Route::resource('users', UserController::class);
+Route::resource('users', UserController::class)->except('show');
 
 // Profile
 Route::prefix('/profile')->group(function () {
@@ -45,8 +45,10 @@ Route::prefix('/profile')->group(function () {
 Route::prefix('/setup')->group(function () {
     Route::prefix('/student/class')->name('student.class.')->group(function () {
         Route::get('/', [StudentClassController::class, 'index'])->name('index');
-        Route::get('/edit', [StudentClassController::class, 'index'])->name('edit');
-        Route::get('/delete', [StudentClassController::class, 'index'])->name('destroy');
+        Route::get('/create', [StudentClassController::class, 'create'])->name('create');
+        Route::post('/store', [StudentClassController::class, 'store'])->name('store');
+        Route::get('/edit', [StudentClassController::class, 'edit'])->name('edit');
+        Route::get('/delete', [StudentClassController::class, 'destroy'])->name('destroy');
     });
 });
 
