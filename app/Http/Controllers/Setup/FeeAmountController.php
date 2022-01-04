@@ -13,8 +13,9 @@ class FeeAmountController extends Controller
 {
     public function index()
     {
-        $data['fee_amounts'] = FeeCategoryAmount::all();
-        return view('pages.setup.fee_amount.index', $data);
+        // $data['fee_amounts'] = FeeCategoryAmount::all();
+        $fee_amounts = FeeCategoryAmount::select('fee_category_id')->groupBy('fee_category_id')->get();
+        return view('pages.setup.fee_amount.index', compact('fee_amounts'));
     }
 
     public function create()

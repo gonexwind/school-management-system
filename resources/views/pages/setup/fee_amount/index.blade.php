@@ -38,14 +38,14 @@
                                     @foreach($fee_amounts as $key => $data)
                                         <tr>
                                             <td class="text-center">{{ $key+1 }}</td>
-                                            <td class="text-center">{{ $data->fee_category_id }}</td>
+                                            <td class="text-center">{{ $data['fee_category']['name'] }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('fee-amount.destroy', $data->id) }}"
+                                                <form action="{{ route('fee-amount.destroy', $data->fee_category_id) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="{{ route('fee-amount.edit', $data->id) }}"
+                                                    <a href="{{ route('fee-amount.edit', $data->fee_category_id) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
