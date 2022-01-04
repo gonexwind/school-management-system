@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Setup\StudentClassController;
+use App\Http\Controllers\Setup\StudentYearController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,8 @@ Route::prefix('/profile')->group(function () {
 // Setup Management
 Route::prefix('/setup')->group(function () {
     Route::resource('student-class', StudentClassController::class)
+        ->except('show');
+    Route::resource('student-year', StudentYearController::class)
         ->except('show');
 });
 

@@ -89,7 +89,7 @@ $route = Route::current()->getName();
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('student-year.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Student Year</span>
                             </a>
                         </li>
