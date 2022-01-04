@@ -48,8 +48,13 @@ class StudentClassController extends Controller
         ]);
     }
 
-    public function destroy()
+    public function destroy($id)
     {
+        StudentClass::find($id)->delete();
+        return Redirect::route('student-class.index')->with([
+            'message' => 'success deleted data',
+            'alert-type' => 'success',
+        ]);
 
     }
 }
