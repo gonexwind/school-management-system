@@ -109,7 +109,7 @@ $route = Route::current()->getName();
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('fee-amount.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Fee Category Amount</span>
                             </a>
                         </li>

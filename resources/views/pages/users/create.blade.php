@@ -27,6 +27,9 @@
                                 <div class="col-lg-8 offset-lg-2 col-md-12 mb-4">
                                     <label for="role">Role</label>
                                     <select name="role" id="role" class="es-add-select">
+                                        <option value="" selected="" disabled class="form-control">
+                                            Select Role
+                                        </option>
                                         <option value="admin">Admin</option>
                                         <option value="employee">Employee</option>
                                         <option value="student">Student</option>
