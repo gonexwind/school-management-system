@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
+    <!-- SweetAler2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.3/dist/sweetalert2.min.css">
     <!-- Custom Charts -->
     <style>
         .js-doughnut-chart {

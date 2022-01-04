@@ -55,6 +55,5 @@ class StudentClassController extends Controller
             'message' => 'success deleted data',
             'alert-type' => 'success',
         ]);
-
     }
 }

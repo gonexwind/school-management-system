@@ -17,7 +17,7 @@
 
 <!-- Toastr -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script>
+<script type="text/javascript">
     @if(Session::has('message'))
     var type = "{{ Session::get('alert-type', 'info') }}"
     switch (type) {
@@ -35,6 +35,30 @@
             break;
     }
     @endif
+</script>
+
+<!-- Sweet Alert -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.3/dist/sweetalert2.min.js"></script>
+<script type="text/javascript">
+    function deleteConfirm() {
+        return Swal.fire({
+            title: 'Are you sure?',
+            text: "Delete this data?",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'Cancel',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+            }
+        });
+    }
 </script>
 </body>
 </html>

@@ -99,7 +99,7 @@
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
-                                                    <button type="submit"
+                                                    <button type="submit" id="delete"
                                                             class="btn btn-outline-danger es-am-btn">
                                                         Delete
                                                     </button>
