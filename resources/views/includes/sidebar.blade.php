@@ -84,7 +84,7 @@ $route = Route::current()->getName();
                     <ul id="setup-management" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level"
                         style="display: none;">
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="{{ route('student.class.index') }}">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('student-class.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Student Class</span>
                             </a>
                         </li>

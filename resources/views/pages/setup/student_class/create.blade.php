@@ -9,7 +9,7 @@
                         <h2 class="text-white mb-0">Add Class</h2>
                     </header>
                     <div class="card-body">
-                        <form action="{{ route('student.class.store') }}" method="post" class="es-form es-add-form">
+                        <form action="{{ route('student-class.store') }}" method="post" class="es-form es-add-form">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-8 offset-lg-2 col-md-12 mb-4">

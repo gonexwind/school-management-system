@@ -43,12 +43,7 @@ Route::prefix('/profile')->group(function () {
 
 // Setup Management
 Route::prefix('/setup')->group(function () {
-    Route::prefix('/student/class')->name('student.class.')->group(function () {
-        Route::get('/', [StudentClassController::class, 'index'])->name('index');
-        Route::get('/create', [StudentClassController::class, 'create'])->name('create');
-        Route::post('/store', [StudentClassController::class, 'store'])->name('store');
-        Route::get('/edit', [StudentClassController::class, 'edit'])->name('edit');
-        Route::get('/delete', [StudentClassController::class, 'destroy'])->name('destroy');
-    });
+    Route::resource('student-class', StudentClassController::class)
+        ->except('show');
 });
 

@@ -24,9 +24,24 @@ class StudentClassController extends Controller
     {
         $request->validate(['name' => 'required|unique:student_classes']);
         StudentClass::insert(['name' => $request->name]);
-        return Redirect::route('student.class.index')->with([
+        return Redirect::route('student-class.index')->with([
             'message' => 'success inserted data',
             'alert-type' => 'success',
         ]);
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
     }
 }

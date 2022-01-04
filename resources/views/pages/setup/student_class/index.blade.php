@@ -19,7 +19,7 @@
             <section class="es-form-area">
                 <div class="card">
                     <header class="card-header bg-gradient border-0 pt-5 pb-5 d-flex align-items-center">
-                        <a href="{{ route('student.class.create') }}" class="btn btn-sm btn-pill btn-outline-light ml-auto">+
+                        <a href="{{ route('student-class.create') }}" class="btn btn-sm btn-pill btn-outline-light ml-auto">+
                             Add New</a>
                     </header>
                     <div class="card-body">
@@ -39,11 +39,11 @@
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $data->name }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('student.class.destroy', [$data->id]) }}"
+                                                <form action="{{ route('student-class.destroy', [$data->id]) }}"
                                                       method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('student.class.edit', [$data->id]) }}"
+                                                    <a href="{{ route('student-class.edit', [$data->id]) }}"
                                                        class="btn btn-outline-danger es-am-btn">
                                                         Edit
                                                     </a>
