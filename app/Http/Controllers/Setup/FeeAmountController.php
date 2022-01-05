@@ -80,19 +80,7 @@ class FeeAmountController extends Controller
 
     public function show($id)
     {
-        $data['fee_amounts'] = FeeCategoryAmount::where('fee_category_id', $id)
-            ->orderBy('class_id', 'asc')->get();
-        $data['fee_categories'] = FeeCategory::all();
-        $data['student_classes'] = StudentClass::all();
+        $data['details'] = FeeCategoryAmount::where('fee_category_id', $id)->orderBy('class_id', 'asc')->get();
         return view('pages.setup.fee_amount.show', $data);
     }
-
-//    public function destroy($id)
-//    {
-//        FeeCategoryAmount::find($id)->delete();
-//        return Redirect::route('fee-amount.index')->with([
-//            'message' => 'success deleted data',
-//            'alert-type' => 'success',
-//        ]);
-//    }
 }
