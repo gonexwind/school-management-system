@@ -49,8 +49,11 @@ class FeeAmountController extends Controller
 
     public function edit($id)
     {
-        $data = FeeCategoryAmount::find($id);
-        return view('pages.setup.fee_amount.edit', compact('data'));
+        $data['fee_amounts'] = FeeCategoryAmount::where('fee_category_id', $id)
+            ->orderBy('class_id', 'asc')->get();
+        $data['fee_categories'] = FeeCategory::all();
+        $data['student_classes'] = StudentClass::all();
+        return view('pages.setup.fee_amount.edit', $data);
     }
 
     public function update(Request $request, $id)
