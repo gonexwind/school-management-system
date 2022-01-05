@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Setup\ExamTypeController;
 use App\Http\Controllers\Setup\FeeAmountController;
 use App\Http\Controllers\Setup\FeeCategoryController;
+use App\Http\Controllers\Setup\SchoolSubjectController;
 use App\Http\Controllers\Setup\StudentClassController;
 use App\Http\Controllers\Setup\StudentGroupController;
 use App\Http\Controllers\Setup\StudentShiftController;
@@ -56,5 +57,5 @@ Route::prefix('/setup')->group(function () {
     Route::resource('fee-category', FeeCategoryController::class)->except('show');
     Route::resource('fee-amount', FeeAmountController::class)->except('destroy');
     Route::resource('exam-type', ExamTypeController::class)->except('show');
+    Route::resource('school-subject', SchoolSubjectController::class)->except('show');
 });
-
