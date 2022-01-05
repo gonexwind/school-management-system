@@ -129,7 +129,7 @@ $route = Route::current()->getName();
                             </a>
                         </li>
                         <li class="u-sidebar-nav-menu__item">
-                            <a class="u-sidebar-nav-menu__link" href="">
+                            <a class="u-sidebar-nav-menu__link" href="{{ route('designation.index') }}">
                                 <span class="u-sidebar-nav-menu__item-title">Designation</span>
                             </a>
                         </li>
