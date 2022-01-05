@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <div class="u-content">
         <div class="u-body">
             <section class="es-form-area">
@@ -34,7 +36,7 @@
                                 </div>
 
                                 @foreach($fee_amounts as $fee_amount)
-                                    <div class="row align-items-center">
+                                    <div class="row align-items-center delete_whole_extra_item_add" id="delete_whole_extra_item_add"">
                                         <div class="col">
                                             <label>Student Class</label>
                                             <select name="class_id[]" class="es-add-select">
@@ -60,10 +62,17 @@
                                                    value="{{ $fee_amount->amount }}"
                                                    required>
                                         </div>
-                                        <div class="col">
-                                            <span style="width:60px;" class="es-form-btn btn btn-success addeventmore">
-                                                <i class="fa fa-plus-circle"></i>
-                                            </span>
+                                        <div class="row">
+                                            <div class="col">
+                                                <span style="width:50px;" class="es-form-btn btn btn-success addeventmore">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col">
+                                                 <span style="width:50px;" class="es-form-btn btn btn-danger removeeventmore">
+                                                    <i class="fa fa-minus-circle"></i>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -135,24 +144,22 @@
                                 </span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var counter = 0;
+            $(document).on("click", '.removeeventmore', function () {
+                $(this).closest(".delete_whole_extra_item_add").remove();
+                counter--;
+            });
             $(document).on("click", ".addeventmore", function () {
                 var whole_extra_item_add = $('#whole_extra_item_add').html();
                 $(this).closest(".add_item").append(whole_extra_item_add);
                 counter++;
-            });
-            $(document).on("click", '.removeeventmore', function (event) {
-                $(this).closest(".delete_whole_extra_item_add").remove();
-                counter -= 1;
             });
         });
     </script>
