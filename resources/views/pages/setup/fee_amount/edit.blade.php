@@ -61,9 +61,9 @@
                                                    required>
                                         </div>
                                         <div class="col">
-                                    <span style="width:60px;" class="es-form-btn btn btn-success addeventmore">
-                                        <i class="fa fa-plus-circle"></i>
-                                    </span>
+                                            <span style="width:60px;" class="es-form-btn btn btn-success addeventmore">
+                                                <i class="fa fa-plus-circle"></i>
+                                            </span>
                                         </div>
                                     </div>
                                 @endforeach

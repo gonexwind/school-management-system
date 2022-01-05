@@ -40,21 +40,14 @@
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td class="text-center">{{ $data['fee_category']['name'] }}</td>
                                             <td class="text-center">
-                                                <form action="{{ route('fee-amount.destroy', $data->fee_category_id) }}"
-                                                      method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <a href="{{ route('fee-amount.edit', $data->fee_category_id) }}"
-                                                       class="btn btn-outline-danger es-am-btn">
-                                                        Edit
-                                                    </a>
-                                                    <button type="submit"
-                                                            onclick="return confirm('Are you sure you want to delete this item?');"
-                                                            class="btn btn-outline-danger es-am-btn">
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                <a href="{{ route('fee-amount.show', $data->fee_category_id) }}"
+                                                   class="btn btn-outline-danger es-am-btn">
+                                                    Detail
+                                                </a>
+                                                <a href="{{ route('fee-amount.edit', $data->fee_category_id) }}"
+                                                   class="btn btn-outline-danger es-am-btn">
+                                                    Edit
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

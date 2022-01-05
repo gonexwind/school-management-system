@@ -53,6 +53,6 @@ Route::prefix('/setup')->group(function () {
     Route::resource('student-group', StudentGroupController::class)->except('show');
     Route::resource('student-shift', StudentShiftController::class)->except('show');
     Route::resource('fee-category', FeeCategoryController::class)->except('show');
-    Route::resource('fee-amount', FeeAmountController::class)->except('show');
+    Route::resource('fee-amount', FeeAmountController::class)->except('destroy');
 });
 

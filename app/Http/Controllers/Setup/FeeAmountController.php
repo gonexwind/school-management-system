@@ -13,9 +13,9 @@ class FeeAmountController extends Controller
 {
     public function index()
     {
-        // $data['fee_amounts'] = FeeCategoryAmount::all();
+        $all = FeeCategoryAmount::all();
         $fee_amounts = FeeCategoryAmount::select('fee_category_id')->groupBy('fee_category_id')->get();
-        return view('pages.setup.fee_amount.index', compact('fee_amounts'));
+        return view('pages.setup.fee_amount.index', compact('fee_amounts', 'all'));
     }
 
     public function create()
@@ -58,22 +58,41 @@ class FeeAmountController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate(['name' => 'required|unique:fee_categories']);
-        $data = FeeCategoryAmount::find($id);
-        $data->name = $request->name;
-        $data->save();
+        $request->validate([
+            'fee_category_id' => 'required',
+            'class_id' => 'required',
+        ]);
+
+        $count = count($request->class_id);
+        FeeCategoryAmount::where('fee_category_id', $id)->delete();
+        for ($i = 0; $i < $count; $i++) {
+            $data = new FeeCategoryAmount();
+            $data->fee_category_id = $request->fee_category_id;
+            $data->class_id = $request->class_id[$i];
+            $data->amount = $request->amount[$i];
+            $data->save();
+        }
         return Redirect::route('fee-amount.index')->with([
             'message' => 'success updated data',
             'alert-type' => 'success',
         ]);
     }
 
-    public function destroy($id)
+    public function show($id)
     {
-        FeeCategoryAmount::find($id)->delete();
-        return Redirect::route('fee-amount.index')->with([
-            'message' => 'success deleted data',
-            'alert-type' => 'success',
-        ]);
+        $data['fee_amounts'] = FeeCategoryAmount::where('fee_category_id', $id)
+            ->orderBy('class_id', 'asc')->get();
+        $data['fee_categories'] = FeeCategory::all();
+        $data['student_classes'] = StudentClass::all();
+        return view('pages.setup.fee_amount.show', $data);
     }
+
+//    public function destroy($id)
+//    {
+//        FeeCategoryAmount::find($id)->delete();
+//        return Redirect::route('fee-amount.index')->with([
+//            'message' => 'success deleted data',
+//            'alert-type' => 'success',
+//        ]);
+//    }
 }
