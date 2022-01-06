@@ -11,7 +11,7 @@
 
 On going portfolio project
 
-<img src="screenshot/dashboard.png" width="50%" />
+<img src="screenshot/dashboard.png"/>
 
 ## About Laravel
 
